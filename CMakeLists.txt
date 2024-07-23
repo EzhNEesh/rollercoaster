@@ -27,3 +27,6 @@ install(TARGETS rollercoaster
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
+configure_file(${CMAKE_SOURCE_DIR}/test/detector_src_32f.bin ${CMAKE_CURRENT_BINARY_DIR}/detector_src_32f.bin COPYONLY)
+configure_file(${CMAKE_SOURCE_DIR}/test/test_findrollercoasters_data.txt ${CMAKE_CURRENT_BINARY_DIR}/test_findrollercoasters_data.txt COPYONLY)
