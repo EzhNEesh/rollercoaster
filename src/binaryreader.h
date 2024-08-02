@@ -2,8 +2,6 @@
 #define BINARYREADER_H
 
 #include <vector>
-#include <iostream>
-#include <fstream>
 
 class BinaryReader
 {

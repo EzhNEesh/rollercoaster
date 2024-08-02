@@ -2,7 +2,6 @@
 #define ROLLERCOASTER_H
 
 #include <vector>
-#include <iostream>
 
 class RollerCoaster
 {

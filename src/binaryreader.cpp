@@ -1,3 +1,6 @@
+#include <iostream>
+#include <fstream>
+
 #include "binaryreader.h"
 
 BinaryReader::BinaryReader() {}
