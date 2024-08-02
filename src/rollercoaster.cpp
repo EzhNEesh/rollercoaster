@@ -1,7 +1,10 @@
+#include <iostream>
+#include <string>
+
 #include "rollercoaster.h"
 
 RollerCoaster::RollerCoaster(const std::vector<float> &_nums) {
-    this->nums = _nums;
+    nums = _nums;
 }
 
 std::vector<std::pair<unsigned int, unsigned int>> RollerCoaster::findRollerCoasters(
@@ -9,6 +12,13 @@ std::vector<std::pair<unsigned int, unsigned int>> RollerCoaster::findRollerCoas
     const unsigned int &maxRange,
     const int &noizeFloor)
 {
+    if (minRange > nums.size()) {
+        throw std::logic_error("Minimal range("
+                               + std::to_string(minRange)
+                               + ") cannot be greater than nums size("
+                               + std::to_string(nums.size()) + ')');
+    }
+
     std::vector<std::pair<unsigned int, unsigned int>> results;
 
     unsigned int curPos = 0;

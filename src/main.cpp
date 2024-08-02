@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <string>
 
 #include "binaryreader.h"
 #include "normaldistribution.h"
@@ -25,7 +26,36 @@ int main(int argc, char *argv[])
     int noizeFloor = nDistribution.getBorders().second;
 
     RollerCoaster rollerCoaster{nums};
-    std::vector<std::pair<unsigned int, unsigned int>> results = rollerCoaster.findRollerCoasters(atoi(argv[3]), atoi(argv[4]), noizeFloor);
+    std::vector<std::pair<unsigned int, unsigned int>> results;
+    unsigned int minRange;
+    unsigned int maxRange;
+
+    try {
+        size_t countConverted;
+
+        minRange = std::stoi(argv[3], &countConverted);
+        if (countConverted != strlen(argv[3])) {
+            std::cout << "Min range must be unsigned integer" << std::endl;
+            return 1;
+        }
+
+        maxRange = std::stoi(argv[4], &countConverted);
+        if (countConverted != strlen(argv[4])) {
+            std::cout << "Max range must be unsigned integer" << std::endl;
+            return 1;
+        }
+    } catch (std::invalid_argument &excp){
+        std::cout << excp.what() << std::endl;
+        return 1;
+    } catch (std::out_of_range){
+        std::cout << "Cannot convert border" << std::endl;
+        return 1;
+    }
+    try {
+        results = rollerCoaster.findRollerCoasters(minRange, maxRange, noizeFloor);
+    } catch (std::logic_error){
+        std::cout << "Border number is too long " << std::endl;
+    }
 
     std::ofstream file(argv[2]);
     if (file.is_open()) {
