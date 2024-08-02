@@ -4,12 +4,12 @@
 #include <fstream>
 #include <iostream>
 
-#include "../src/binaryreader.h"
-#include "../src/binaryreader.cpp"
-#include "../src/normaldistribution.h"
-#include "../src/normaldistribution.cpp"
-#include "../src/rollercoaster.h"
-#include "../src/rollercoaster.cpp"
+#include "binaryreader.h"
+#include "binaryreader.cpp"
+#include "normaldistribution.h"
+#include "normaldistribution.cpp"
+#include "rollercoaster.h"
+#include "rollercoaster.cpp"
 
 // struct RollerCoasterTest : testing::Test {
 
