@@ -31,7 +31,7 @@ TEST(RollerCoasterTest, FindRollerCoasters) {
     const size_t rollerCoastersCount = 6867;
 
     BinaryReader binReader;
-    std::vector<float> nums = binReader.readBinary(filePath);
+    std::vector<float> nums = binReader.getNumsFromBinary(filePath);
     NormalDistribution nDistribution{nums};
     int noizeFloor = nDistribution.getBorders().second;
     RollerCoaster rollerCoaster{nums};

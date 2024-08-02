@@ -5,7 +5,7 @@
 
 BinaryReader::BinaryReader() {}
 
-std::vector<float> BinaryReader::readBinary(const std::string &filepath) {
+std::vector<float> BinaryReader::getNumsFromBinary(const std::string &filepath) {
     std::ifstream file(filepath, std::ios::binary);
     std::vector<float> nums;
     if (file.is_open()) {
