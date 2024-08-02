@@ -23,7 +23,7 @@ NormalDistribution::NormalDistribution(const std::vector<float> &nums) {
 std::pair<int, int> NormalDistribution::getBorders() {
     int left = moda;
     int right = moda;
-    while (100. * distribution[left] / totalCount + 100. * distribution[right] / totalCount > 2) {
+    while (100. * distribution[left] / totalCount + 100. * distribution[right] / totalCount > 2 || left >= 0 || right <= distribution.size()) {
         left--;
         right++;
     }
