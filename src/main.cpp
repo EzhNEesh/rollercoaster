@@ -62,6 +62,8 @@ int main(int argc, char *argv[])
         for (unsigned int i = 0; i < results.size(); i++) {
             file << results[i].first << ' ' << results[i].second << std::endl;
         }
+    } else {
+        std::cout << "Could not open file to output" << std::endl;
     }
     return 0;
 }
