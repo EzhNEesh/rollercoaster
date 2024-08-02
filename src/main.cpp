@@ -13,7 +13,13 @@ int main(int argc, char *argv[])
     }
 
     BinaryReader binReader;
-    std::vector<float> nums = binReader.readBinary(argv[1]);
+    std::vector<float> nums;
+    try {
+        nums = binReader.readBinary(argv[1]);
+    } catch (std::runtime_error &excp) {
+        std::cout << excp.what() << std::endl;
+        return 1;
+    }
 
     NormalDistribution nDistribution{nums};
     int noizeFloor = nDistribution.getBorders().second;

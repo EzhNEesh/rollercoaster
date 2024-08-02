@@ -13,6 +13,13 @@ std::vector<float> BinaryReader::readBinary(const std::string &filepath) {
         while (file.read((char*)&num, sizeof(float))){
             nums.push_back(num);
         }
+        if (file.bad()) {
+            file.close();
+            throw std::runtime_error("Bad file");
+        }
+    } else {
+        throw std::runtime_error("Could not open file");
     }
+    file.close();
     return nums;
 }
