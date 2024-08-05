@@ -7,7 +7,7 @@
 class NormalDistribution
 {
 public:
-    NormalDistribution(const std::vector<float> &);
+    NormalDistribution(const std::vector<float> &nums);
     std::pair<int, int> getBorders();
 
 private:

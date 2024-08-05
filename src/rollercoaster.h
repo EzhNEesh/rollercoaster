@@ -6,8 +6,10 @@
 class RollerCoaster
 {
 public:
-    RollerCoaster(const std::vector<float> &);
-    std::vector<std::pair<unsigned int, unsigned int>> findRollerCoasters(const unsigned int &, const unsigned int &, const int &);
+    RollerCoaster(const std::vector<float> &nums);
+    std::vector<std::pair<unsigned int, unsigned int>> findRollerCoasters(const unsigned int &minRange,
+                                                                          const unsigned int &maxRange,
+                                                                          const int &noizeFloor);
 
 private:
     std::vector<float> nums;

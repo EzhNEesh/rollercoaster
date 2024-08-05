@@ -7,7 +7,7 @@ class BinaryReader
 {
 public:
     BinaryReader();
-    static std::vector<float> getNumsFromBinary(const std::string &);
+    static std::vector<float> getNumsFromBinary(const std::string &filePath);
 };
 
 #endif // BINARYREADER_H
